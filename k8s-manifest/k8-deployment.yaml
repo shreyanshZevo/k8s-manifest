@@ -16,7 +16,8 @@ spec:
       containers:
         - name: dev-appsetting-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
       imagePullSecrets:
-        - name: ecr-registry-secret
+        - name: ecr-key
