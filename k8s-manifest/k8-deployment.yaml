@@ -20,19 +20,9 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: PORT
-              value: "3000"
-            - name: DB_HOST
-              value: "qa-dbsrv.cmjkuhgflwrj.ap-south-1.rds.amazonaws.com"
-            - name: DB_PORT
-              value: "5432"
-            - name: DB_USER
-              value: "ZevoAdmin2024"
-            - name: DB_PASSWORD
-              value: "Zevo2024100"
-            - name: DB_NAME
-              value: "appsettingdb"
-            - name: USER_ID
-              value: "1"
+            - name: ENV
+              value: "DEV"
+            - name: SECRET_NAME
+              value: ms-appsetting-devsrv-secret
       imagePullSecrets:
         - name: ecr-key
