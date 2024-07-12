@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: appsetting-deployment
+  name: dev-appsetting-deployment
   namespace: argocd
 spec:
   template:
     spec:
       containers:
-        - name: appsetting-ecr-repo
+        - name: dev-appsetting-ecr-repo
           env:
             - name: ENV
               value: "DEV"

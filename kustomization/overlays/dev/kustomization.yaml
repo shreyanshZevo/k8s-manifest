@@ -3,3 +3,4 @@ bases:
 
 patchesStrategicMerge:
   - patch-deployment.yaml
+  - patch-service.yaml
