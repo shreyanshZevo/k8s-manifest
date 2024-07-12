@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appsetting-deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: appsetting-ecr-repo
+          env:
+            - name: ENV
+              value: "DEV"
+            - name: SECRET_NAME
+              value: ms-appsetting-devsrv-secret
