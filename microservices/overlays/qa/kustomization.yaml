@@ -1,9 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
+resources:
   - ../../base
 
-patchesStrategicMerge:
-  - ms-1-appsetting-patch.yaml
-  - ms-2-authservice-patch.yaml
-  - ms-3-profileservice-patch.yaml
+patches:
+  - path: ms-1-appsetting-patch.yaml
+    target:
+      kind: Deployment
+      name: qa-appsetting-deployment
+  - path: ms-2-authservice-patch.yaml
+    target:
+      kind: Deployment
+      name: qa-authservice-deployment
+  - path: ms-3-profileservice-patch.yaml
+    target:
+      kind: Deployment
+      name: qa-profileservice-deployment
