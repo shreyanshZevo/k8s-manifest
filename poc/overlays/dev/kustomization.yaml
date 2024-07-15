@@ -4,7 +4,7 @@ resources:
   - ../../base
 
 patches:
-  - path: ms-1-appsetting-patch.yaml
+  - path: ms-1-deploy-patch.yaml
     target:
       kind: Deployment
       name: appsetting-deployment
