@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: qa-profileservice
+      app: profileservice
   template:
     metadata:
       labels:
-        app: qa-profileservice
+        app: profileservice
     spec:
       containers:
         - name: profileservice-ecr-repo

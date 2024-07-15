@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: qa-authservice
+      app: authservice
   template:
     metadata:
       labels:
-        app: qa-authservice
+        app: authservice
     spec:
       containers:
         - name: authservice-ecr-repo
