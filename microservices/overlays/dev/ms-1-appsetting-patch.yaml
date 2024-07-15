@@ -1,21 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-appsetting-deployment
+  name: appsetting-deployment # Ensure this matches the name in the base deployment
 spec:
-  selector:
-    matchLabels:
-      app: dev-appsetting
   template:
     metadata:
       labels:
-        app: dev-appsetting
+        app: dev-appsetting # Update labels for dev environment
     spec:
       containers:
-        - name: appsetting-ecr-repo
-          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest
+        - name: dev-appsetting-ecr-repo # Update container name for dev environment
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest # Update image for dev environment
           env:
             - name: ENV
-              value: "DEV"
+              value: "DEV" # Update environment variable for dev environment
             - name: SECRET_NAME
-              value: ms-appsetting-devsrv-secret
+              value: ms-appsetting-devsrv-secret # Update secret name for dev environment
