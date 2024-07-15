@@ -14,15 +14,13 @@ spec:
         app: appsetting
     spec:
       containers:
-        - name: appsetting-ecr-repo
-          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/appsetting-ecr-repo:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 3000
-          env:
-            - name: ENV
-              value: "ENV"
-            - name: SECRET_NAME
-              value: ms-appsetting-srv-secret
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
+        env:
+          - name: ENV
+            value: "ENV"
+          - name: SECRET_NAME
+            value: ms-appsetting-srv-secret
       imagePullSecrets:
         - name: ecr-key
