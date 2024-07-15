@@ -11,11 +11,25 @@ patches:
     target:
       kind: Deployment
       name: appsetting-deployment
+  - path: ms-1-appsetting-service-patch.yaml
+    target:
+      kind: Service
+      name: appsetting-service
+
   - path: ms-2-authservice-patch.yaml
     target:
       kind: Deployment
       name: authservice-deployment
+  - path: ms-2-authservice-service-patch.yaml
+    target:
+      kind: Service
+      name: authservice-service
+
   - path: ms-3-profileservice-patch.yaml
     target:
       kind: Deployment
       name: profileservice-deployment
+  - path: ms-3-profileservice-service-patch.yaml
+    target:
+      kind: Service
+      name: profileservice-service
