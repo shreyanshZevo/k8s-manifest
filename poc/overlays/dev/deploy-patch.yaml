@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: qa-appsetting # Updated matchLabels
+      app: appsetting # Updated matchLabels
   template:
     metadata:
       labels:
-        app: qa-appsetting # Updated labels
+        app: appsetting # Updated labels
     spec:
       containers:
         - name: qa-appsetting-ecr-repo # Updated container name
