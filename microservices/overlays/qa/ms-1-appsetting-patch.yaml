@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-appsetting-deployment
+spec:
+  selector:
+    matchLabels:
+      app: qa-appsetting
+  template:
+    metadata:
+      labels:
+        app: qa-appsetting
+    spec:
+      containers:
+        - name: qa-appsetting-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-appsetting-ecr-repo:latest
+          env:
+            - name: ENV
+              value: "qa"
+            - name: SECRET_NAME
+              value: ms-appsetting-qasrv-secret

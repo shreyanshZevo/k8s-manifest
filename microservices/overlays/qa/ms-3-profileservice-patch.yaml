@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-profileservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: qa-profileservice
+  template:
+    metadata:
+      labels:
+        app: qa-profileservice
+    spec:
+      containers:
+        - name: qa-profileservice-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-profileservice-ecr-repo:latest
+          env:
+            - name: ENV
+              value: "qa"
+            - name: SECRET_NAME
+              value: ms-profileservice-qasrv-secret

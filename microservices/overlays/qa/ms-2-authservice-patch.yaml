@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-authservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: qa-authservice
+  template:
+    metadata:
+      labels:
+        app: qa-authservice
+    spec:
+      containers:
+        - name: qa-authservice-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-authservice-ecr-repo:latest
+          env:
+            - name: ENV
+              value: "qa"
+            - name: SECRET_NAME
+              value: ms-authservice-qasrv-secret

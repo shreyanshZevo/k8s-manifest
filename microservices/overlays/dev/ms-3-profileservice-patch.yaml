@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-profileservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: dev-profileservice
+  template:
+    metadata:
+      labels:
+        app: dev-profileservice
+    spec:
+      containers:
+        - name: dev-profileservice-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-profileservice-ecr-repo:latest
+          env:
+            - name: ENV
+              value: "DEV"
+            - name: SECRET_NAME
+              value: ms-profileservice-devsrv-secret
