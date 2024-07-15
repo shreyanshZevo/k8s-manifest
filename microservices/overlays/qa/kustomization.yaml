@@ -1,5 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
+namePrefix: qa-
+
 resources:
   - ../../base
 
@@ -10,7 +13,7 @@ patches:
       name: qa-appsetting-deployment
   - path: ms-2-authservice-patch.yaml
     target:
-      kind: Deployment
+      kind: Deployments
       name: qa-authservice-deployment
   - path: ms-3-profileservice-patch.yaml
     target:
