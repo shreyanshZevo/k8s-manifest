@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: qa-appsetting
+        app: appsetting
     spec:
       containers:
         - name: qa-appsetting-ecr-repo
