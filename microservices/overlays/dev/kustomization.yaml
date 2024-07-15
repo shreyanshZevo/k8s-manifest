@@ -3,16 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
 
-patches:
-  - path: ms-1-appsetting-patch.yaml
-    target:
-      kind: Deployment
-      name: dev-appsetting-deployment
-  - path: ms-2-authservice-patch.yaml
-    target:
-      kind: Deployment
-      name: dev-authservice-deployment
-  - path: ms-3-profileservice-patch.yaml
-    target:
-      kind: Deployment
-      name: dev-profileservice-deployment
+patchesStrategicMerge:
+  - ms-1-appsetting-patch.yaml
+  - ms-2-authservice-patch.yaml
+  - ms-3-profileservice-patch.yaml

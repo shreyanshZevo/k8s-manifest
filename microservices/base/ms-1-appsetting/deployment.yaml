@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-appsetting-deployment
+  name: appsetting-deployment
   namespace: argocd
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: dev-appsetting
+      app: appsetting
   template:
     metadata:
       labels:
-        app: dev-appsetting
+        app: appsetting
     spec:
       containers:
-        - name: dev-appsetting-ecr-repo
-          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest
+        - name: appsetting-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/appsetting-ecr-repo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
             - name: ENV
-              value: "DEV"
+              value: "ENV"
             - name: SECRET_NAME
-              value: ms-appsetting-devsrv-secret
+              value: ms-appsetting-srv-secret
       imagePullSecrets:
         - name: ecr-key
