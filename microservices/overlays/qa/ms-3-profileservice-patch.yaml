@@ -12,7 +12,7 @@ spec:
         app: qa-profileservice
     spec:
       containers:
-        - name: qa-profileservice-ecr-repo
+        - name: profileservice-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-profileservice-ecr-repo:latest
           env:
             - name: ENV

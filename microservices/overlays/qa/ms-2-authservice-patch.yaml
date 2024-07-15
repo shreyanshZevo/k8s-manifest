@@ -12,7 +12,7 @@ spec:
         app: qa-authservice
     spec:
       containers:
-        - name: qa-authservice-ecr-repo
+        - name: authservice-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-authservice-ecr-repo:latest
           env:
             - name: ENV

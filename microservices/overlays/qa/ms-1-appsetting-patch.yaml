@@ -12,7 +12,7 @@ spec:
         app: qa-appsetting
     spec:
       containers:
-        - name: qa-appsetting-ecr-repo
+        - name: appsetting-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/qa-appsetting-ecr-repo:latest
           env:
             - name: ENV
