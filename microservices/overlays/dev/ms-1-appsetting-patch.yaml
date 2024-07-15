@@ -9,7 +9,7 @@ spec:
         app: dev-appsetting # Update labels for dev environment
     spec:
       containers:
-        - name: dev-appsetting-ecr-repo # Update container name for dev environment
+        - name: appsetting-ecr-repo # Update container name for dev environment
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest # Update image for dev environment
           env:
             - name: ENV
