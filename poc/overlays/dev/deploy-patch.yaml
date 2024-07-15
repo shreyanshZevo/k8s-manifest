@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-appsetting-deployment
+spec:
+  selector:
+    matchLabels:
+      app: dev-appsetting
+  template:
+    metadata:
+      labels:
+        app: dev-appsetting
+    spec:
+      containers:
+        - name: dev-appsetting-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest
+          env:
+            - name: ENV
+              value: "DEV"
+            - name: SECRET_NAME
+              value: ms-appsetting-devsrv-secret
