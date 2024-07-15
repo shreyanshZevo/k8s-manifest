@@ -4,7 +4,7 @@ resources:
   - ../../base
 
 patches:
-  - path: deployment.yaml
+  - path: deploy-patch.yaml
     target:
       kind: Deployment
       name: appsetting-deployment
