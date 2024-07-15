@@ -12,7 +12,7 @@ spec:
         app: dev-authservice
     spec:
       containers:
-        - name: dev-authservice-ecr-repo
+        - name: authservice-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-authservice-ecr-repo:latest
           env:
             - name: ENV

@@ -12,7 +12,7 @@ spec:
         app: dev-profileservice
     spec:
       containers:
-        - name: dev-profileservice-ecr-repo
+        - name: profileservice-ecr-repo
           image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-profileservice-ecr-repo:latest
           env:
             - name: ENV

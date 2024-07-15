@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-authservice-deployment
+  name: authservice-deployment
   namespace: argocd
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: dev-authservice
+      app: authservice
   template:
     metadata:
       labels:
-        app: dev-authservice
+        app: authservice
     spec:
       containers:
-        - name: dev-authservice-ecr-repo
-          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/dev-authservice-ecr-repo:latest
+        - name: authservice-ecr-repo
+          image: 785059138812.dkr.ecr.ap-south-1.amazonaws.com/authservice-ecr-repo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
@@ -23,6 +23,6 @@ spec:
             - name: ENV
               value: "DEV"
             - name: SECRET_NAME
-              value: ms-authservice-devsrv-secret
+              value: ms-authservice-srv-secret
       imagePullSecrets:
         - name: ecr-key
