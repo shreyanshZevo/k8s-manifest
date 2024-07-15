@@ -13,7 +13,7 @@ patches:
       name: appsetting-deployment
   - path: ms-2-authservice-patch.yaml
     target:
-      kind: Deployments
+      kind: Deployment
       name: authservice-deployment
   - path: ms-3-profileservice-patch.yaml
     target:
