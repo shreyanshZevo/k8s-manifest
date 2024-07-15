@@ -5,6 +5,3 @@ resources:
   - ms-1/service.yaml
   - ms-2/deployment.yaml
   - ms-2/service.yaml
-  # Add entries for all other microservices
-  - ms-10/deployment.yaml
-  - ms-10/service.yaml
