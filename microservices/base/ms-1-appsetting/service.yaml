@@ -11,4 +11,5 @@ spec:
       name: dev-port
       port: 80
       targetPort: 3000
-  type: LoadBalancer
+      nodePort: 31246
+  type: NodePort
